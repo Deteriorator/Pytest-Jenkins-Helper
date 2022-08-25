@@ -14,8 +14,15 @@ conda install pyqt
 pip install nuitka
 ```
 
-在 GUI 目录执行如下命令
+修改从 ui 文件转换的 py 文件为如下内容
+
+```python
+from .QCodeEditor import QCodeEditor
+import GUI.res_rc
+```
+
+在 run.py 同级目录执行如下命令
 
 ```bash
-nuitka --standalone --mingw64 --show-memory --show-progress --nofollow-imports --enable-plugin=pyqt5 --follow-import-to=pyqt5 --windows-icon-from-ico=./static/helper.ico --output-dir=./ ./run.py
+nuitka --standalone --windows-disable-console --mingw64 --show-memory --show-progress --nofollow-imports --enable-plugin=pyqt5 --follow-import-to=GUI --windows-icon-from-ico=./GUI/static/helper.ico --output-dir=./ ./run.py
 ```
