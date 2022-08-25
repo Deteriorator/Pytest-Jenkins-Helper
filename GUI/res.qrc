@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="static">
+    <file>static/helper.svg</file>
     <file>static/trans.svg</file>
   </qresource>
 </RCC>
